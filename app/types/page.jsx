@@ -1,7 +1,7 @@
 import Link from "next/link";
 import React from "react";
 
-const fetchRecipeAreas = async () => {
+export const fetchRecipeAreas = async () => {
   const res = await fetch(
     "https://www.themealdb.com/api/json/v1/1/list.php?a=list"
   );

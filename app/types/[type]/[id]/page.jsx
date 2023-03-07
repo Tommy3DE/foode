@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import { fetchRecipeAreas } from "../../page";
 
 const fetchRecipeDetails = async (id) => {
   const res = await fetch(
@@ -11,7 +12,7 @@ const fetchRecipeDetails = async (id) => {
 
 const page = async ({ params }) => {
   const recipeDetails = await fetchRecipeDetails(params.id); //szczegóły potraw
-  const details = recipeDetails.meals[0];
+  const details = recipeDetails && recipeDetails.meals ? recipeDetails?.meals[0] : {};
 //   console.log(details); szczegóły dań
 
   const ingredients = Object.keys(details).filter(
@@ -42,13 +43,22 @@ const page = async ({ params }) => {
             ))}
         </div>
         <p className="mt-3">{details.strInstructions}</p>
-        <div className="mt-3 text-slate-500">
-            <p>Video Link:</p>
-            <a target='_blank' href={details.strYoutube}>{details.strMeal}</a>
-        </div>
+        {details.strYoutube && 
+            <div className="mt-3 text-slate-500">
+                <p>Video Link:</p>
+                <a target='_blank' href={details.strYoutube}>{details.strMeal}</a>
+            </div>
+        }
       </div>
     </div>
   );
 };
+
+export const generateStaticParams = async () => {
+    const areas = await fetchRecipeAreas()
+    return areas.map(area => ({
+        type: area
+    }))
+}
 
 export default page;
