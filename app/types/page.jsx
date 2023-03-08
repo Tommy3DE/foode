@@ -12,16 +12,19 @@ export const fetchRecipeAreas = async () => {
 const page = async () => {
   const areas = await fetchRecipeAreas();
   return (
-    <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 p-5">
-      {areas.map((a, index) => (
-        <Link
-          href={`/types/${a}`}
-          key={index}
-          className="shadow-gray-500 bg-gray-300 rounded text-2xl py-10 text-center font-bold hover:bg-blue-500 hover:text-white"
-        >
-          {a}
-        </Link>
-      ))}
+    <div>
+      <h1 className="text-2xl mt-3 text-center py-3">Pick country of origin</h1>
+      <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 p-5">
+        {areas.map((a, index) => (
+          <Link
+            href={`/types/${a}`}
+            key={index}
+            className="shadow-gray-500 bg-gray-300 rounded text-2xl py-10 text-center font-bold hover:bg-blue-500 hover:text-white"
+          >
+            {a}
+          </Link>
+        ))}
+      </div>
     </div>
   );
 };

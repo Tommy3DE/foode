@@ -54,11 +54,6 @@ const page = async ({ params }) => {
   );
 };
 
-export const generateStaticParams = async () => {
-    const areas = await fetchRecipeAreas()
-    return areas.map(area => ({
-        type: area
-    }))
-}
+
 
 export default page;
