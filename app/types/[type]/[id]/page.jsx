@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import { fetchRecipeAreas } from "../../page";
+import Link from "next/link";
 
 const fetchRecipeDetails = async (id) => {
   const res = await fetch(
