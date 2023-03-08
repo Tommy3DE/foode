@@ -11,7 +11,7 @@ const Header = () => {
   const recipeId = pathname[3];
   console.log(randomArea);
   return (
-    <div className="py-5 bg-slate-300 flex items-center justify-between px-2 border-b-4 ">
+    <div className="py-2 bg-white flex items-center justify-between px-2">
       <Link href="/">
         <h1 className="text-blue-700 font-bold text-5xl">Foode</h1>
       </Link>

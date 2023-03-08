@@ -5,7 +5,7 @@ import Link from 'next/link'
 const RecipeList = ({recipes, type}) => {
     // console.log(recipes)
   return (
-    <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 p-5">
+    <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 p-5 bg-[url('../public/bgvertical.png')] bg-cover ">
         {recipes.map((recipe, index)=>{
             return (
             <div key={index} className='rounded overflow-hidden bg-slate-200 text-center'>
