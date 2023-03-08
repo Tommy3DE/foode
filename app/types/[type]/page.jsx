@@ -10,7 +10,9 @@ const getRecipes = async (type)=>{
 const Page = async({params}) => {
     const recipes = await getRecipes(params.type)
   return (
+    <div className="bg-[url('../public/menubg.jpeg')] bg-contain h-full" >
     <RecipeList recipes={recipes.meals} type={params.type}/>
+    </div>
   )
 }
 
