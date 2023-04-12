@@ -17,7 +17,7 @@ const Header = () => {
           <h1 className="text-blue-700 font-bold text-5xl">Cuisine App </h1>
         </Link>
         <button className="ml-4  bg-transparent border-2 px-0.5 hidden md:block">
-          <a href="https://63d14f15b8305d4d556107bf--startling-bienenstitch-220eca.netlify.app/?fbclid=IwAR15QoCcO4CvjPsP6s9XFXjzsA-U0MZzl_LF9BaMIUGoS9jBG0GNkjygFkY">
+          <a href="https://main--startling-bienenstitch-220eca.netlify.app">
             WRÓĆ DO PORTFOLIO
           </a>
         </button>
